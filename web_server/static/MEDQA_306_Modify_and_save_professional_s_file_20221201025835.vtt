@@ -18,16 +18,16 @@ scroll:up
 
 0
 00:00:00.361 --> 00:00:10.430
-SETUP  Test Initializer.Perform a Fresh Launch and Login
+SETUP  Perform a Fresh Launch and Login
 
 1
 00:00:10.430 --> 00:00:11.240
-KEYWORD  Professionals.Open List of Professionals
+KEYWORD  Open List of Professionals
 
 2
 00:00:11.240 --> 00:00:14.640
-KEYWORD  ui.lib.pages.professionalManagement.ProfessionalManagement.Select Professional In Prof Management  Lessard, Marc
+KEYWORD  Select Professional In Prof Management  Lessard, Marc
 
 3
 00:00:14.640 --> 00:00:14.740
-KEYWORD  ui.lib.pages.common.Common.Wait Till Window Open
+KEYWORD  Wait Till Window Open
