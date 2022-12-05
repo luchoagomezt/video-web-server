@@ -1,6 +1,6 @@
 from flask import request, redirect, url_for, render_template, flash, session
 from web_server import app
-from web_server.scripts.test import Test
+from web_server.entity.test import Test
 
 @app.route('/')
 def show_entries():
