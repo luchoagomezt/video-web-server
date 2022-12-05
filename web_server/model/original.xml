@@ -1,0 +1,670 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot generator="Rebot 3.0 (Python 3.6.5 on win32)" generated="20221204 23:55:23.926">
+<suite id="s1" name="Tests" source="C:\Jenkins\workspace\TA-24043-swit---22ea5a3f\medesync-ui-automation\ui\tests">
+<suite id="s1-s1" name="Login" source="C:\Jenkins\workspace\TA-24043-swit---22ea5a3f\medesync-ui-automation\ui\tests\Login">
+<suite id="s1-s1-s1" name="Login" source="C:\Jenkins\workspace\TA-24043-swit---22ea5a3f\medesync-ui-automation\ui\tests\Login\Login.txt">
+<test id="s1-s1-s1-t1" name="MEDQA 321 Login Screen Using Valid Credentials">
+<kw name="Perform a Fresh Launch and Login" library="Test Initializer">
+<kw name="Setup Test Configuration Parameters" library="Test Initializer">
+<kw name="Setup Test Configuration" library="Test Initializer">
+<kw name="Set Language" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the language of execution.</doc>
+<arguments>
+<arg>${LANGUAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:52:23.736" endtime="20221204 23:52:23.742"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:52:23.736" endtime="20221204 23:52:23.742"></status>
+</kw>
+<kw name="Set Url" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:52:23.743" endtime="20221204 23:52:23.746"></status>
+</kw>
+<kw name="Set Target Type" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${TARGET TYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:52:23.746" endtime="20221204 23:52:23.749"></status>
+</kw>
+<kw name="Set Browser Or Device Name" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up browser or device name. For example, if we want to run the tests in browser chrome, </doc>
+<arguments>
+<arg>${BROWSER NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:52:23.750" endtime="20221204 23:52:23.751"></status>
+</kw>
+<kw name="Set Proxy" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the proxy, in case you are behind a corporate proxy</doc>
+<arguments>
+<arg>${PROXY URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:52:23.752" endtime="20221204 23:52:23.754"></status>
+</kw>
+<kw name="Set Environment" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${ENVIRONMENT}</arg>
+</arguments>
+<msg timestamp="20221204 23:52:23.756" level="INFO">{'_user_key': 'Admin', '_name': 'Admin TELUS', '_username': 'admin86', '_password': 'dev', '_is_default_user': True}
+{'_user_key': 'Julie', '_name': 'julie.marmet', '_username': 'julie.marmet', '_password': 'dev', '_is_default_user': False}</msg>
+<status status="PASS" starttime="20221204 23:52:23.754" endtime="20221204 23:52:23.756"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:52:23.736" endtime="20221204 23:52:23.757"></status>
+</kw>
+<kw name="Launch App And Login" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:52:23.757" endtime="20221204 23:52:32.649"></status>
+</kw>
+<kw name="Accept Online Benefit Check And Continue" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:52:32.650" endtime="20221204 23:52:34.669"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:52:23.735" endtime="20221204 23:52:34.669"></status>
+</kw>
+<kw name="Wait For Homepage Page To Load" library="ui.lib.pages.homescreenMenus.HomescreenMenus">
+<status status="PASS" starttime="20221204 23:52:34.670" endtime="20221204 23:52:44.084"></status>
+</kw>
+<kw name="Verify Profile Name" library="ui.lib.pages.homescreenMenus.HomescreenMenus">
+<arguments>
+<arg>Admin TELUS</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:52:44.084" endtime="20221204 23:52:46.301"></status>
+</kw>
+<kw name="Cleanup" library="Test Initializer" type="teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:52:46.302" endtime="20221204 23:52:46.302"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:52:46.302" endtime="20221204 23:52:50.410"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:52:46.302" endtime="20221204 23:52:50.410"></status>
+</kw>
+<doc>Video: [http://10.63.0.246/videos/MEDQA_321_Login_Screen_Using_Valid_Credentials_20221205045221.webm|MEDQA 321 Login Screen Using Valid Credentials]</doc>
+<tags>
+<tag>Users</tag>
+<tag>zzPriority-highest</tag>
+</tags>
+<timeout value="5 minutes"></timeout>
+<status status="PASS" starttime="20221204 23:52:11.917" endtime="20221204 23:52:50.410" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t2" name="MEDQA 320 Validate Logon Screen">
+<kw name="Perform a Fresh Launch" library="Test Initializer">
+<kw name="Setup Test Configuration Parameters" library="Test Initializer">
+<kw name="Setup Test Configuration" library="Test Initializer">
+<kw name="Set Language" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the language of execution.</doc>
+<arguments>
+<arg>${LANGUAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:01.974" endtime="20221204 23:53:01.980"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:01.974" endtime="20221204 23:53:01.980"></status>
+</kw>
+<kw name="Set Url" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:01.981" endtime="20221204 23:53:01.984"></status>
+</kw>
+<kw name="Set Target Type" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${TARGET TYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:01.985" endtime="20221204 23:53:01.987"></status>
+</kw>
+<kw name="Set Browser Or Device Name" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up browser or device name. For example, if we want to run the tests in browser chrome, </doc>
+<arguments>
+<arg>${BROWSER NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:01.987" endtime="20221204 23:53:01.988"></status>
+</kw>
+<kw name="Set Proxy" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the proxy, in case you are behind a corporate proxy</doc>
+<arguments>
+<arg>${PROXY URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:01.988" endtime="20221204 23:53:01.989"></status>
+</kw>
+<kw name="Set Environment" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${ENVIRONMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:01.989" endtime="20221204 23:53:01.990"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:01.974" endtime="20221204 23:53:01.990"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:53:01.991" endtime="20221204 23:53:01.992"></status>
+</kw>
+<kw name="Launch App To Login Screen" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:53:01.992" endtime="20221204 23:53:09.521"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:01.973" endtime="20221204 23:53:09.521"></status>
+</kw>
+<kw name="Verify Logon Screen" library="ui.lib.pages.login.Login">
+<status status="PASS" starttime="20221204 23:53:09.521" endtime="20221204 23:53:09.636"></status>
+</kw>
+<kw name="Cleanup" library="Test Initializer" type="teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:09.637" endtime="20221204 23:53:09.638"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:53:09.639" endtime="20221204 23:53:13.736"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:09.636" endtime="20221204 23:53:13.738"></status>
+</kw>
+<doc>Video: [http://10.63.0.246/videos/MEDQA_320_Validate_Logon_Screen_20221205045259.webm|MEDQA 320 Validate Logon Screen]</doc>
+<tags>
+<tag>Users</tag>
+<tag>zzPriority-highest</tag>
+</tags>
+<timeout value="5 minutes"></timeout>
+<status status="PASS" starttime="20221204 23:52:50.527" endtime="20221204 23:53:13.738" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t3" name="MEDQA 322 Existing user try to login with invalid User ID">
+<kw name="Perform a Fresh Launch" library="Test Initializer">
+<kw name="Setup Test Configuration Parameters" library="Test Initializer">
+<kw name="Setup Test Configuration" library="Test Initializer">
+<kw name="Set Language" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the language of execution.</doc>
+<arguments>
+<arg>${LANGUAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:25.252" endtime="20221204 23:53:25.255"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:25.251" endtime="20221204 23:53:25.255"></status>
+</kw>
+<kw name="Set Url" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:25.255" endtime="20221204 23:53:25.260"></status>
+</kw>
+<kw name="Set Target Type" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${TARGET TYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:25.261" endtime="20221204 23:53:25.263"></status>
+</kw>
+<kw name="Set Browser Or Device Name" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up browser or device name. For example, if we want to run the tests in browser chrome, </doc>
+<arguments>
+<arg>${BROWSER NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:25.264" endtime="20221204 23:53:25.265"></status>
+</kw>
+<kw name="Set Proxy" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the proxy, in case you are behind a corporate proxy</doc>
+<arguments>
+<arg>${PROXY URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:25.265" endtime="20221204 23:53:25.266"></status>
+</kw>
+<kw name="Set Environment" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${ENVIRONMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:25.267" endtime="20221204 23:53:25.269"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:25.250" endtime="20221204 23:53:25.269"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:53:25.270" endtime="20221204 23:53:25.272"></status>
+</kw>
+<kw name="Launch App To Login Screen" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:53:25.272" endtime="20221204 23:53:32.797"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:25.249" endtime="20221204 23:53:32.797"></status>
+</kw>
+<kw name="Enter Login Info" library="ui.lib.pages.login.Login">
+<arguments>
+<arg>123</arg>
+<arg>dev</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:32.797" endtime="20221204 23:53:33.295"></status>
+</kw>
+<kw name="Verify Error Message Is Present" library="ui.lib.pages.common.Common">
+<arguments>
+<arg>${test_resource}</arg>
+<arg>user or password not correct</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:33.296" endtime="20221204 23:53:33.613"></status>
+</kw>
+<kw name="Cleanup" library="Test Initializer" type="teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:33.614" endtime="20221204 23:53:33.614"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:53:33.614" endtime="20221204 23:53:37.727"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:33.613" endtime="20221204 23:53:37.728"></status>
+</kw>
+<doc>Video: [http://10.63.0.246/videos/MEDQA_322_Existing_user_try_to_login_with_invalid_User_ID_20221205045323.webm|MEDQA 322 Existing user try to login with invalid User ID]</doc>
+<tags>
+<tag>Users</tag>
+<tag>zzPriority-highest</tag>
+</tags>
+<timeout value="5 minutes"></timeout>
+<status status="PASS" starttime="20221204 23:53:13.834" endtime="20221204 23:53:37.728" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t4" name="MEDQA 323 Existing user try to login with invalid password">
+<kw name="Perform a Fresh Launch" library="Test Initializer">
+<kw name="Setup Test Configuration Parameters" library="Test Initializer">
+<kw name="Setup Test Configuration" library="Test Initializer">
+<kw name="Set Language" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the language of execution.</doc>
+<arguments>
+<arg>${LANGUAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:49.263" endtime="20221204 23:53:49.270"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:49.262" endtime="20221204 23:53:49.270"></status>
+</kw>
+<kw name="Set Url" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:49.271" endtime="20221204 23:53:49.273"></status>
+</kw>
+<kw name="Set Target Type" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${TARGET TYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:49.273" endtime="20221204 23:53:49.275"></status>
+</kw>
+<kw name="Set Browser Or Device Name" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up browser or device name. For example, if we want to run the tests in browser chrome, </doc>
+<arguments>
+<arg>${BROWSER NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:49.275" endtime="20221204 23:53:49.278"></status>
+</kw>
+<kw name="Set Proxy" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the proxy, in case you are behind a corporate proxy</doc>
+<arguments>
+<arg>${PROXY URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:49.278" endtime="20221204 23:53:49.279"></status>
+</kw>
+<kw name="Set Environment" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${ENVIRONMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:49.279" endtime="20221204 23:53:49.281"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:49.261" endtime="20221204 23:53:49.281"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:53:49.281" endtime="20221204 23:53:49.282"></status>
+</kw>
+<kw name="Launch App To Login Screen" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:53:49.283" endtime="20221204 23:53:56.828"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:49.260" endtime="20221204 23:53:56.828"></status>
+</kw>
+<kw name="Enter Login Info" library="ui.lib.pages.login.Login">
+<arguments>
+<arg>admin86</arg>
+<arg>test</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:56.829" endtime="20221204 23:53:57.339"></status>
+</kw>
+<kw name="Verify Error Message Is Present" library="ui.lib.pages.common.Common">
+<arguments>
+<arg>${test_resource}</arg>
+<arg>user or password not correct</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:57.340" endtime="20221204 23:53:57.653"></status>
+</kw>
+<kw name="Cleanup" library="Test Initializer" type="teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:53:57.654" endtime="20221204 23:53:57.654"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:53:57.655" endtime="20221204 23:54:01.768"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:53:57.654" endtime="20221204 23:54:01.768"></status>
+</kw>
+<doc>Video: [http://10.63.0.246/videos/MEDQA_323_Existing_user_try_to_login_with_invalid_password_20221205045347.webm|MEDQA 323 Existing user try to login with invalid password]</doc>
+<tags>
+<tag>Users</tag>
+<tag>zzPriority-highest</tag>
+</tags>
+<timeout value="5 minutes"></timeout>
+<status status="PASS" starttime="20221204 23:53:37.796" endtime="20221204 23:54:01.768" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t5" name="MEDQA 325 Switch language on the login page">
+<kw name="Perform a Fresh Launch" library="Test Initializer">
+<kw name="Setup Test Configuration Parameters" library="Test Initializer">
+<kw name="Setup Test Configuration" library="Test Initializer">
+<kw name="Set Language" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the language of execution.</doc>
+<arguments>
+<arg>${LANGUAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:13.280" endtime="20221204 23:54:13.287"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:13.279" endtime="20221204 23:54:13.287"></status>
+</kw>
+<kw name="Set Url" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:13.288" endtime="20221204 23:54:13.290"></status>
+</kw>
+<kw name="Set Target Type" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${TARGET TYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:13.290" endtime="20221204 23:54:13.292"></status>
+</kw>
+<kw name="Set Browser Or Device Name" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up browser or device name. For example, if we want to run the tests in browser chrome, </doc>
+<arguments>
+<arg>${BROWSER NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:13.292" endtime="20221204 23:54:13.294"></status>
+</kw>
+<kw name="Set Proxy" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the proxy, in case you are behind a corporate proxy</doc>
+<arguments>
+<arg>${PROXY URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:13.294" endtime="20221204 23:54:13.295"></status>
+</kw>
+<kw name="Set Environment" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${ENVIRONMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:13.295" endtime="20221204 23:54:13.296"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:13.278" endtime="20221204 23:54:13.296"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:54:13.297" endtime="20221204 23:54:13.298"></status>
+</kw>
+<kw name="Launch App To Login Screen" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:54:13.298" endtime="20221204 23:54:20.932"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:13.276" endtime="20221204 23:54:20.932"></status>
+</kw>
+<kw name="Verify Language Link" library="ui.lib.pages.login.Login">
+<arguments>
+<arg>English</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:20.932" endtime="20221204 23:54:21.028"></status>
+</kw>
+<kw name="Click Switch Language Link" library="ui.lib.pages.login.Login">
+<status status="PASS" starttime="20221204 23:54:21.028" endtime="20221204 23:54:22.094"></status>
+</kw>
+<kw name="Verify Language Link" library="ui.lib.pages.login.Login">
+<arguments>
+<arg>Français</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:22.094" endtime="20221204 23:54:22.150"></status>
+</kw>
+<kw name="Cleanup" library="Test Initializer" type="teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:22.150" endtime="20221204 23:54:22.151"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:54:22.151" endtime="20221204 23:54:26.246"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:22.150" endtime="20221204 23:54:26.246"></status>
+</kw>
+<doc>Video: [http://10.63.0.246/videos/MEDQA_325_Switch_language_on_the_login_page_20221205045411.webm|MEDQA 325 Switch language on the login page]</doc>
+<tags>
+<tag>Users</tag>
+<tag>zzPriority-high</tag>
+</tags>
+<timeout value="5 minutes"></timeout>
+<status status="PASS" starttime="20221204 23:54:01.819" endtime="20221204 23:54:26.247" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t6" name="MEDQA 261 Login as Medecin A Factnet">
+<kw name="Perform a Fresh Launch" library="Test Initializer">
+<kw name="Setup Test Configuration Parameters" library="Test Initializer">
+<kw name="Setup Test Configuration" library="Test Initializer">
+<kw name="Set Language" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the language of execution.</doc>
+<arguments>
+<arg>${LANGUAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:37.698" endtime="20221204 23:54:37.704"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:37.698" endtime="20221204 23:54:37.704"></status>
+</kw>
+<kw name="Set Url" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:37.705" endtime="20221204 23:54:37.708"></status>
+</kw>
+<kw name="Set Target Type" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${TARGET TYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:37.708" endtime="20221204 23:54:37.710"></status>
+</kw>
+<kw name="Set Browser Or Device Name" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up browser or device name. For example, if we want to run the tests in browser chrome, </doc>
+<arguments>
+<arg>${BROWSER NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:37.711" endtime="20221204 23:54:37.712"></status>
+</kw>
+<kw name="Set Proxy" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the proxy, in case you are behind a corporate proxy</doc>
+<arguments>
+<arg>${PROXY URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:37.712" endtime="20221204 23:54:37.713"></status>
+</kw>
+<kw name="Set Environment" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${ENVIRONMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:37.713" endtime="20221204 23:54:37.715"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:37.697" endtime="20221204 23:54:37.715"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:54:37.716" endtime="20221204 23:54:37.718"></status>
+</kw>
+<kw name="Launch App To Login Screen" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:54:37.718" endtime="20221204 23:54:45.277"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:37.697" endtime="20221204 23:54:45.278"></status>
+</kw>
+<kw name="Enter Login Info" library="ui.lib.pages.login.Login">
+<arguments>
+<arg>medecina</arg>
+<arg>dev</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:45.278" endtime="20221204 23:54:45.781"></status>
+</kw>
+<kw name="Verify Profile Name" library="ui.lib.pages.homescreenMenus.HomescreenMenus">
+<arguments>
+<arg>Facturation .NET</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:45.781" endtime="20221204 23:54:49.188"></status>
+</kw>
+<kw name="Cleanup" library="Test Initializer" type="teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:54:49.188" endtime="20221204 23:54:49.189"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:54:49.189" endtime="20221204 23:54:53.295"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:54:49.188" endtime="20221204 23:54:53.295"></status>
+</kw>
+<doc>Video: [http://10.63.0.246/videos/MEDQA_261_Login_as_Medecin_A_Factnet_20221205045435.webm|MEDQA 261 Login as Medecin A Factnet]</doc>
+<tags>
+<tag>Billing</tag>
+<tag>zzPriority-highest</tag>
+</tags>
+<timeout value="5 minutes"></timeout>
+<status status="PASS" starttime="20221204 23:54:26.286" endtime="20221204 23:54:53.295" critical="yes"></status>
+</test>
+<test id="s1-s1-s1-t7" name="MEDQA 3111 Logout from Medesync">
+<kw name="Perform a Fresh Launch and Login" library="Test Initializer">
+<kw name="Setup Test Configuration Parameters" library="Test Initializer">
+<kw name="Setup Test Configuration" library="Test Initializer">
+<kw name="Set Language" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the language of execution.</doc>
+<arguments>
+<arg>${LANGUAGE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:04.862" endtime="20221204 23:55:04.871"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:55:04.861" endtime="20221204 23:55:04.871"></status>
+</kw>
+<kw name="Set Url" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:04.872" endtime="20221204 23:55:04.873"></status>
+</kw>
+<kw name="Set Target Type" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${TARGET TYPE}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:04.874" endtime="20221204 23:55:04.877"></status>
+</kw>
+<kw name="Set Browser Or Device Name" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up browser or device name. For example, if we want to run the tests in browser chrome, </doc>
+<arguments>
+<arg>${BROWSER NAME}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:04.878" endtime="20221204 23:55:04.880"></status>
+</kw>
+<kw name="Set Proxy" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<doc>Sets up the proxy, in case you are behind a corporate proxy</doc>
+<arguments>
+<arg>${PROXY URL}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:04.880" endtime="20221204 23:55:04.883"></status>
+</kw>
+<kw name="Set Environment" library="ui.lib.core.robot_execution.MedeSyncExecutionConfiguration">
+<arguments>
+<arg>${ENVIRONMENT}</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:04.884" endtime="20221204 23:55:04.886"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:55:04.860" endtime="20221204 23:55:04.886"></status>
+</kw>
+<kw name="Launch App And Login" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:55:04.887" endtime="20221204 23:55:13.093"></status>
+</kw>
+<kw name="Accept Online Benefit Check And Continue" library="ui.lib.core.setup_manager">
+<status status="PASS" starttime="20221204 23:55:13.094" endtime="20221204 23:55:15.119"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:55:04.860" endtime="20221204 23:55:15.120"></status>
+</kw>
+<kw name="Wait For Homepage Page To Load" library="ui.lib.pages.homescreenMenus.HomescreenMenus">
+<status status="PASS" starttime="20221204 23:55:15.120" endtime="20221204 23:55:15.276"></status>
+</kw>
+<kw name="Click Agenda Menu" library="ui.lib.pages.homescreenMenus.HomescreenMenus">
+<status status="PASS" starttime="20221204 23:55:15.277" endtime="20221204 23:55:16.523"></status>
+</kw>
+<kw name="Verify Language In Profile Setting" library="ui.lib.pages.homescreenFrame.HomescreenFrame">
+<arguments>
+<arg>english</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:16.524" endtime="20221204 23:55:16.580"></status>
+</kw>
+<kw name="Logout" library="Homescreen">
+<kw name="Click Profile Name" library="ui.lib.pages.homescreenMenus.HomescreenMenus">
+<status status="PASS" starttime="20221204 23:55:16.581" endtime="20221204 23:55:16.780"></status>
+</kw>
+<kw name="Click Logout Menu Item" library="ui.lib.pages.homescreenMenus.HomescreenMenus">
+<status status="PASS" starttime="20221204 23:55:16.780" endtime="20221204 23:55:16.893"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:55:16.894" endtime="20221204 23:55:21.014"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:55:16.580" endtime="20221204 23:55:21.014"></status>
+</kw>
+<kw name="Cleanup" library="Test Initializer" type="teardown">
+<kw name="Run Keyword If Test Failed" library="BuiltIn">
+<doc>Runs the given keyword with the given arguments, if the test failed.</doc>
+<arguments>
+<arg>Take Screenshot</arg>
+</arguments>
+<status status="PASS" starttime="20221204 23:55:21.016" endtime="20221204 23:55:21.017"></status>
+</kw>
+<kw name="Close App" library="ui.lib.core.automation_client.MedeSyncAutomationClient">
+<doc>Close App closes the currently open application</doc>
+<status status="PASS" starttime="20221204 23:55:21.018" endtime="20221204 23:55:21.018"></status>
+</kw>
+<status status="PASS" starttime="20221204 23:55:21.015" endtime="20221204 23:55:21.018"></status>
+</kw>
+<doc>Video: [http://10.63.0.246/videos/MEDQA_3111_Logout_from_Medesync_20221205045502.webm|MEDQA 3111 Logout from Medesync]</doc>
+<tags>
+<tag>Users</tag>
+<tag>zzPriority-high</tag>
+</tags>
+<timeout value="5 minutes"></timeout>
+<status status="PASS" starttime="20221204 23:54:53.379" endtime="20221204 23:55:21.018" critical="yes"></status>
+</test>
+<status status="PASS" starttime="20221204 23:52:10.170" endtime="20221204 23:55:21.087"></status>
+</suite>
+<status status="PASS" starttime="20221204 23:52:10.168" endtime="20221204 23:55:21.093"></status>
+</suite>
+<status status="PASS" starttime="20221204 23:52:10.129" endtime="20221204 23:55:21.096"></status>
+</suite>
+<statistics>
+<total>
+<stat pass="7" fail="0">Critical Tests</stat>
+<stat pass="7" fail="0">All Tests</stat>
+</total>
+<tag>
+<stat pass="1" fail="0">Billing</stat>
+<stat pass="6" fail="0">Users</stat>
+<stat pass="2" fail="0">zzPriority-high</stat>
+<stat pass="5" fail="0">zzPriority-highest</stat>
+</tag>
+<suite>
+<stat pass="7" fail="0" id="s1" name="Tests">Tests</stat>
+<stat pass="7" fail="0" id="s1-s1" name="Login">Tests.Login</stat>
+<stat pass="7" fail="0" id="s1-s1-s1" name="Login">Tests.Login.Login</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
