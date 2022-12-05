@@ -2,7 +2,7 @@
 <html lang="en-IE">
 <head>
 	<meta charset="utf-8" />
-	<title>Video Player with Subtitles - Mozilla</title>
+	<title>Video Debugger</title>
 	<meta name="viewport" content="width=device-width, initial-scale=2.5" />
 </head>
 <body>
@@ -14,12 +14,12 @@
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
 	<video id="video"  width="640" height="480" controls preload="metadata">
 	  <source type="video/webm"
-			  src="{{url_for('static', filename='MEDQA_306_Modify_and_save_professional_s_file_20221201025835.webm')}}" />
+			  src="{{url_for('static', filename=video_name)}}" />
 	  <track
 		label="English"
 		kind="captions"
 		srclang="en"
-		src="{{url_for('static', filename='MEDQA_306_Modify_and_save_professional_s_file_20221201025835.vtt')}}"
+		src="{{url_for('static', filename=track_name)}}"
 		default />
 	</video>
 </div>

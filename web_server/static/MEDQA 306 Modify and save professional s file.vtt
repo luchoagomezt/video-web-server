@@ -1,0 +1,33 @@
+WEBVTT
+
+REGION
+id:SETUP
+width:5%
+lines:1
+regionanchor:0%,100%
+viewportanchor:10%,90%
+scroll:up
+
+REGION
+id:KEYWORD
+width:5%
+lines:1
+regionanchor:100%,100%
+viewportanchor:90%,90%
+scroll:up
+
+0
+00:00:00.361 --> 00:00:10.430
+SETUP  Perform a Fresh Launch and Login
+
+1
+00:00:10.430 --> 00:00:11.240
+KEYWORD  Open List of Professionals
+
+2
+00:00:11.240 --> 00:00:14.640
+KEYWORD  Select Professional In Prof Management  Lessard, Marc
+
+3
+00:00:14.640 --> 00:00:14.740
+KEYWORD  Wait Till Window Open
