@@ -1,27 +1,41 @@
 <!DOCTYPE html>
 <html lang="en-IE">
+
 <head>
 	<meta charset="utf-8" />
 	<title>Video Debugger</title>
 	<meta name="viewport" content="width=device-width, initial-scale=2.5" />
+	<link rel="stylesheet" href="./style.css" />
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
 </head>
+
 <body>
-<div style="float:right; width:80%">
-<div>
-	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
-	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
-	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
-	<video id="video"  width="640" height="480" controls preload="metadata">
-	  <source type="video/webm"
-			  src="{{url_for('static', filename=video_name)}}" />
-	  <track
-		label="English"
-		kind="captions"
-		srclang="en"
-		src="{{url_for('static', filename=track_name)}}"
-		default />
-	</video>
-</div>
+	<div class="banner">
+		<img class="logo" src="../images/telushealth.png" , alt="telushealth"> </img>
+		<img class="title" src="../images/title.png" , alt="video web server"> </img>
+	</div>
+	<div class="container">
+		<div class="file">
+			<div class="label1">Choose an xml file to upload:</div>
+			<input class="label2" type="file" name="xml file" accept=".xml"> </input>
+			<input class="label4" type="submit" />
+			<div class="label3">Search for a test case:</div>
+			<input class="label2"> </input>
+		</div>
+		<div class="main_content">
+			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+			<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+			<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+			<video id="video" class="video" controls preload="metadata">
+				<source type="video/webm" src="{{url_for('static', filename=video_name)}}" />
+				<track label="English" kind="captions" srclang="en" src="{{url_for('static', filename=track_name)}}"
+					default />
+			</video>
+		</div>
+	</div>
+	<div class="footer">
+		<img class="footer" src="../images/medesync.png" , alt="medesync"> </img>
+	</div>
 </body>
+
 </html>
