@@ -5,14 +5,14 @@
 	<meta charset="utf-8" />
 	<title>Video Debugger</title>
 	<meta name="viewport" content="width=device-width, initial-scale=2.5" />
-	<link rel="stylesheet" href="style.css" />
+	<link rel="stylesheet" type="text/css" href="{{url_for('static', filename='styles/style.css')}}" />
 	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"> -->
 </head>
 
 <body>
 	<div class="banner">
-		<img class="logo" src="../images/telushealth.png" , alt="telushealth"> </img>
-		<img class="title" src="../images/title.png" , alt="video web server"> </img>
+		<img class="logo" src="{{url_for('static', filename='images/telushealth.png')}}" , alt="telushealth"> </img>
+		<img class="title" src="{{url_for('static', filename='images/title.png')}}" , alt="video web server"> </img>
 	</div>
 	<div class="container">
 		<div class="file">
@@ -34,7 +34,7 @@
 		</div>
 	</div>
 	<div class="footer">
-		<img class="footer" src="../images/medesync.png" , alt="medesync"> </img>
+		<img class="footer" src="{{url_for('static', filename='images/medesync.png')}}" , alt="medesync"> </img>
 	</div>
 </body>
 
