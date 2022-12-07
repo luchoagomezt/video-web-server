@@ -4,8 +4,8 @@ body {
     height: 100%;
     background-image: url('../images/full.jpg');
     background-repeat: no-repeat;
-    background-size: 40vw;
-    background-position: 115% -150%;
+    background-size: 30vw;
+    background-position: 130% 10%;
 }
 
 .banner {
