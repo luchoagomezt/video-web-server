@@ -1,4 +1,4 @@
-from web_server.entity.test import Test
+from video-web-server.web_server.entity.test import Test
 
 
 def test_video_file_name():
