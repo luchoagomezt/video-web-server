@@ -78,7 +78,6 @@ class Video:
 
                             if kw1.arguments.children[0].cdata == 'sleep':
                                 f.write(f'{kw1.arguments.children[0].cdata} for {kw1.arguments.children[1].cdata}s\n\n')
-
                             else:
                                 f.write(f'{kw1.arguments.children[0].cdata}\n\n')
         f.close()
