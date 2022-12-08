@@ -40,26 +40,48 @@ class Video:
         f.write('WEBVTT\n\n\n')
         count = 0
         current = timedelta()
-        first = True
 
         for test in obj.robot.suite.suite.suite.test:
             if test['name'] == self.test_name:
                 for kw in test.kw:
-                    f.write(f'{count}\n')
-                    ms = int(current.microseconds / 1000)
+                    if kw["name"] != "Run Keywords":
+                        f.write(f'{count}\n')
+                        ms = int(current.microseconds / 1000)
 
-                    f.write(f'0{str(current).split(".")[0]}.{ms:03d}')
-                    f.write(' --> ')
+                        f.write(f'0{str(current).split(".")[0]}.{ms:03d}')
+                        f.write(' --> ')
+                        count += 1
+                        start = convert_to_time(kw.status["starttime"])
+                        end = convert_to_time(kw.status["endtime"])
+                        current += end - start
 
-                    count += 1
-                    start = convert_to_time(kw.status["starttime"])
-                    end = convert_to_time(kw.status["endtime"])
-                    current += end - start
+                        ms = int(current.microseconds / 1000)
 
-                    ms = int(current.microseconds / 1000)
+                        f.write(f'0{str(current).split(".")[0]}.{ms:03d}\n')
+                        f.write(f'{kw["name"]}\n\n')
+                    else:
+                        for kw1 in kw.kw:
+                            f.write(f'{count}\n')
+                            ms = int(current.microseconds / 1000)
 
-                    f.write(f'0{str(current).split(".")[0]}.{ms:03d}\n')
-                    f.write(f'{kw["name"]}\n\n')
+                            f.write(f'0{str(current).split(".")[0]}.{ms:03d}')
+                            f.write(' --> ')
+                            count += 1
+
+                            start = convert_to_time(kw1.status["starttime"])
+                            end = convert_to_time(kw1.status["endtime"])
+                            current += end - start
+
+                            ms = int(current.microseconds / 1000)
+
+                            f.write(f'0{str(current).split(".")[0]}.{ms:03d}\n')
+
+                            if kw1.arguments.children[0].cdata == 'sleep':
+                                f.write(f'{kw1.arguments.children[0].cdata} for {kw1.arguments.children[1].cdata}s\n\n')
+
+                            else:
+                                f.write(f'{kw1.arguments.children[0].cdata}\n\n')
+        f.close()
 
 if __name__ == '__main__':
     video = Video('MEDQA 339 Add a professional')
