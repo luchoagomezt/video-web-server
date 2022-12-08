@@ -38,11 +38,13 @@ body {
     margin-top: 0%;
     font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
     color:#4B286D;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
 }
 
 .label1 {
     font-size: 20px;
-    margin-left: 13%;
 }
 
 .label2 {
