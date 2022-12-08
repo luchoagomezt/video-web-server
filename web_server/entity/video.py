@@ -62,6 +62,7 @@ class Video:
                     f.write(f'{kw["name"]}\n\n')
 
 
+
 if __name__ == '__main__':
     video = Video('MEDQA 339 Add a professional')
     video.generate_vtt_file('../model/original.xml')
