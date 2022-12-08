@@ -20,7 +20,7 @@ def convert_to_time(time_as_string: str) -> timedelta:
     return td
 
 
-class Test:
+class Video:
     def __init__(self, test_name):
         self.test_name = test_name
         self.xmlFile = 'model/original.xml'
@@ -63,7 +63,7 @@ class Test:
 
 
 if __name__ == '__main__':
-    test = Test('MEDQA 339 Add a professional')
-    test.generate_vtt_file('../model/original.xml')
+    video = Video('MEDQA 339 Add a professional')
+    video.generate_vtt_file('../model/original.xml')
     assert (filecmp.cmp("../static/videos/MEDQA 339 Add a professional(1).vtt",
                         "../static/videos/MEDQA 339 Add a professional.vtt"))
