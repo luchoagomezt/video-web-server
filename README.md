@@ -12,6 +12,7 @@
 
 # How to reconnect to Video Web Server
 ### 1.Open CMD and run as administrator
-### 2.Change to the location where you want to clone the repository
+### 2.Change to the location where you store the repository
 ### 3.Run command: venv\scripts\activate
 ### 4.Run command: python ./server.py
+### 5.Open browser and go to https://127.0.0.1:5000 
