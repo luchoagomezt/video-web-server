@@ -6,6 +6,8 @@ from web_server.entity.video import Video
 @app.route('/')
 def show_video_with_track():
     video = Video("MEDQA 339 Add a professional")
+    video.generate_vtt_file()
     video_name = video.get_video_file_name()
     track_name = video.get_track_file_name()
-    return render_template("index.html", video_name=video_name, track_name=track_name)
+    test_names = video.get_test_names()
+    return render_template("index.html", video_name=video_name, track_name=track_name, tests = test_names)

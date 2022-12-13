@@ -23,7 +23,10 @@ def convert_to_time(time_as_string: str) -> timedelta:
 class Video:
     def __init__(self, test_name):
         self.test_name = test_name
-        self.xmlFile = 'model/original.xml'
+        self.CONFIG_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
+        self.xmlFile = os.path.join(os.path.dirname(self.CONFIG_DIRECTORY), "model/original.xml")
+        self.obj = untangle.parse(self.xmlFile)
+
 
     def get_video_file_name(self):
         return "videos/" + self.test_name + '.webm'
@@ -31,17 +34,31 @@ class Video:
     def get_track_file_name(self):
         return "videos/" + self.test_name + '.vtt'
 
-    def generate_vtt_file(self, xml):
-        obj = untangle.parse(xml)
-        save_path = '../static/videos'
-        complete_name = os.path.join(save_path, self.test_name + ".vtt")
+    def get_test_names(self):
+        tests = [test["name"] for test in self.obj.robot.suite.suite.suite.test]
+        print(tests)
+        return tests
+
+        # tests = [test["name"] for test in obj.robot.suite.suite.suite.test]
+        # save_path = '../static/videos'
+        # complete_name = os.path.join(save_path, "test_name.txt")
+        # f = open(complete_name, "w")
+        # for test in obj.robot.suite.suite.suite.test:
+        #     f.write(test["name"])
+        #     f.write("\n")
+        #
+        # f.close()
+
+    def generate_vtt_file(self):
+
+        complete_name = os.path.join(os.path.dirname(self.CONFIG_DIRECTORY), "static/videos/" + self.test_name + ".vtt")
 
         f = open(complete_name, "w")
         f.write('WEBVTT\n\n\n')
         count = 0
         current = timedelta()
 
-        for test in obj.robot.suite.suite.suite.test:
+        for test in self.obj.robot.suite.suite.suite.test:
             if test['name'] == self.test_name:
                 for kw in test.kw:
                     if kw["name"] != "Run Keywords":
@@ -82,8 +99,13 @@ class Video:
                                 f.write(f'{kw1.arguments.children[0].cdata}\n\n')
         f.close()
 
+
+
 if __name__ == '__main__':
     video = Video('MEDQA 339 Add a professional')
     video.generate_vtt_file('../model/original.xml')
+    video.generate_test_name_file()
+    #video.get_test_names("../static/videos/test_name.txt")
+    #video.get_test_names("../view/test_name.txt")
     assert (filecmp.cmp("../static/videos/MEDQA 339 Add a professional(1).vtt",
                         "../static/videos/MEDQA 339 Add a professional.vtt"))
