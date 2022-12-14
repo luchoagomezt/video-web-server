@@ -29,6 +29,18 @@ class XMLParser:
         self.obj = object_from_xml
         self.vtt_entry = f'<count>\n<start-time> --> <end-time>\n<keyword>\n\n'
 
+    def get_video_url(self,test_name):
+        for test in self.obj.robot.suite.suite.suite.test:
+            if test['name'] == test_name:
+                return test.doc.cdata.split("[")[1].split("|")[0]
+        return None
+
+    def get_test_names(self):
+        """
+        :return: a list of the names of the test cases
+        """
+        return [test["name"] for test in self.obj.robot.suite.suite.suite.test]
+
     def generate_vtt(self, test_name):
         """
         Generates the VTT entries for a test case
