@@ -26,13 +26,19 @@ class XMLParser:
         Parser for Robot XML object
         :param object_from_xml: Python object from a Robot XML file
         """
+        assert object_from_xml is not None
         self.obj = object_from_xml
         self.vtt_entry = f'<count>\n<start-time> --> <end-time>\n<keyword>\n\n'
 
     def get_video_url(self,test_name):
-        for test in self.obj.robot.suite.suite.suite.test:
-            if test['name'] == test_name:
-                return test.doc.cdata.split("[")[1].split("|")[0]
+        for suite1 in self.obj.robot.suite.suite:
+            try:
+                for suite2 in suite1.suite:
+                    for test in suite2.test:
+                        if test['name'] == test_name:
+                            return test.doc.cdata.split("[")[1].split("|")[0]
+            except AttributeError:
+                pass
         return None
 
     def get_test_names(self):
@@ -40,18 +46,13 @@ class XMLParser:
         :return: a list of the names of the test cases
         """
         test_names = []
-        if self.obj is not None:
-            for suite1 in self.obj.robot.suite.suite:
-                try:
-                    for suite2 in suite1.suite:
-                        for test in suite2.test:
-                            test_names.append(test['name'])
-                except AttributeError:
-                    try:
-                        for test in suite1.test:
-                            test_names.append(test['name'])
-                    except AttributeError:
-                        pass
+        for suite1 in self.obj.robot.suite.suite:
+            try:
+                for suite2 in suite1.suite:
+                    for test in suite2.test:
+                        test_names.append(test['name'])
+            except AttributeError:
+                pass
 
         return test_names
 
@@ -63,34 +64,25 @@ class XMLParser:
         """
         vtt_list = ['WEBVTT\n\n\n']
         elapse_time = timedelta()
-        if self.obj is not None:
-            for suite1 in self.obj.robot.suite.suite:
-                try:
-                    for suite2 in suite1.suite:
-                        for test in suite2.test:
-                            if test['name'] == test_name:
-                                for kw in test.kw:
-                                    if kw["name"] not in {"Run Keywords", "Perform a Fresh Launch and Login", "Cleanup"}:
-                                        entry, elapse_time = self.make_a_vtt_entry(elapse_time, kw, len(vtt_list))
+        for suite1 in self.obj.robot.suite.suite:
+            try:
+                for suite2 in suite1.suite:
+                    for test in suite2.test:
+                        if test['name'] == test_name:
+                            for kw in test.kw:
+                                if kw["name"] not in {"Run Keywords", "Perform a Fresh Launch and Login", "Cleanup"}:
+                                    entry, elapse_time = self.make_a_vtt_entry(elapse_time, kw, len(vtt_list))
+                                    vtt_list.append(entry)
+                                else:
+                                    for kw1 in kw.kw:
+                                        entry, elapse_time = self.make_a_vtt_entry(elapse_time, kw1, len(vtt_list))
                                         vtt_list.append(entry)
-                                    else:
-                                        for kw1 in kw.kw:
-                                            entry, elapse_time = self.make_a_vtt_entry(elapse_time, kw1, len(vtt_list))
-                                            vtt_list.append(entry)
-                except AttributeError:
-                    try:
-                        for test in suite1.test:
-                            if test['name'] == test_name:
-                                for kw in test.kw:
-                                    if kw["name"] not in {"Run Keywords", "Perform a Fresh Launch and Login", "Cleanup"}:
-                                        entry, elapse_time = self.make_a_vtt_entry(elapse_time, kw, len(vtt_list))
-                                        vtt_list.append(entry)
-                                    else:
-                                        for kw1 in kw.kw:
-                                            entry, elapse_time = self.make_a_vtt_entry(elapse_time, kw1, len(vtt_list))
-                                            vtt_list.append(entry)
-                    except AttributeError:
-                        pass
+            except AttributeError:
+                """
+                in the future, if it does exist test cases in obj.robot.suite.suite instead of obj.robot.suite.suite.suite,
+                add the code that's similar to try block with one less for loop
+                """
+                pass
 
         return vtt_list
 
