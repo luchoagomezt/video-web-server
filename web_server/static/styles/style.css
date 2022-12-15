@@ -43,6 +43,10 @@ body {
     text-align: center;
 }
 
+.uploading {
+    display: flex;
+}
+
 .label1 {
     font-size: 20px;
 }
@@ -55,12 +59,17 @@ body {
 
 .label3 {
     font-size: 20px;
-    margin-left: 5%;
+    margin-left: 2%;
 }
 
 .label4{
     font-size:15px;
-    margin-left: 0;
+}
+
+.label5{
+    font-size: 15px;
+    margin-left: 10%;
+    width: 15vw;
 }
 .main_content {
     width: auto;

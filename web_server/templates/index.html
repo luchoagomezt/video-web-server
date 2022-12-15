@@ -16,9 +16,9 @@
 	<div class="container">
 		<div class="file">
 			<div class="label1">Choose an xml file to upload:</div>
-			<form action = "/success" method = "post" enctype="multipart/form-data">
-				<input class="label2" type="file" name="xml file" accept=".xml"> </input>
-				<input class="label4" type="submit" />
+			<form class ="uploading" action='/' method="post" enctype="multipart/form-data">
+			<input class="label5" type="file" name="xml file" accept=".xml">
+			<input class="label4" type="submit" value="Upload">
 			</form>
 			<div class="label3">Search for a test case:</div>
 				<select name=select-test method="GET" action="/">
