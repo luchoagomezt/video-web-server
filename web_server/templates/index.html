@@ -21,7 +21,11 @@
 			<input class="label4" type="submit">
 			</form>
 			<div class="label3">Search for a test case:</div>
-			<input class="label2"> </input>
+				<select name=select-test method="GET" action="/">
+					{% for test in tests %}
+					<option value= "{{test}}" SELECTED>{{test}}</option>
+					{% endfor %}
+				</select>
 		</div>
 		<div class="main_content">
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
