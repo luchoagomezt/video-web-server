@@ -1,13 +1,21 @@
-from flask import request, redirect, url_for, render_template, flash, session
+from flask import *
 from web_server import app
 from web_server.entity.xml_parser import XMLParser
 import untangle
 import os
+from distutils.log import debug
+from fileinput import filename
 
 BASE_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 VIDEO_FILE_NAME = "videos/<test case name>.webm"
 VTT_FILE_NAME = "videos/<test case name>.vtt"
 
+@app.route('/', methods = ['POST'])
+def upload_file():
+    if request.method == 'POST':
+        f = request.files['xml file']
+        f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
+        return show_video_with_track()
 
 @app.route('/')
 def show_video_with_track():
