@@ -15,17 +15,18 @@ def upload_file():
     if request.method == 'POST':
         f = request.files['xml file']
         f.save(os.path.join(app.config['UPLOAD_FOLDER'], f.filename))
-        return show_video_with_track()
+        return show_video_with_track(f.filename)
 
 @app.route('/')
-def show_video_with_track():
-    xml_file_name = "original.xml"
+def show_video_with_track(file_name="original.xml"):
+    xml_file_name = file_name
 
-    xml_file_path_name = os.path.join(os.path.dirname(BASE_DIRECTORY), f'model/{xml_file_name}')
+    xml_file_path_name = os.path.join(os.path.dirname(BASE_DIRECTORY), f'model\{xml_file_name}')
     xml_object = untangle.parse(xml_file_path_name)
     xml_parser = XMLParser(xml_object)
 
-    test_case_name = "MEDQA 339 Add a professional"
+    test_names = xml_parser.get_test_names()
+    test_case_name = test_names[0]
 
     vtt = xml_parser.generate_vtt(test_case_name)
     vtt_file = os.path.join(os.path.dirname(BASE_DIRECTORY), "static/" +
@@ -36,7 +37,6 @@ def show_video_with_track():
             fp.write(entry)
         fp.close()
 
-    test_names = xml_parser.get_test_names()
     video_name = VIDEO_FILE_NAME.replace("<test case name>", test_case_name)
     track_name = VTT_FILE_NAME.replace("<test case name>", test_case_name)
 
