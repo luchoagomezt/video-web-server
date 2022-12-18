@@ -10,8 +10,4 @@ UPLOAD_FOLD = "model"
 UPLOAD_FOLDER = os.path.join(APP_ROOT, UPLOAD_FOLD)
 app.config['UPLOAD_FOLDER'] = UPLOAD_FOLDER
 
-xml_parser: XMLParser = None
-test_names: list = []
-test_case_name: str = ""
-
 import web_server.view.views
