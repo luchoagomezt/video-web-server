@@ -15,18 +15,18 @@
 	</div>
 	<div class="container">
 		<div class="file">
-			<div class="label1">Choose an xml file to upload:</div>
-			<form class ="uploading" action='/' method="post" enctype="multipart/form-data">
+			<form class ="uploading" action='/upload-file' method="post" enctype="multipart/form-data">
 				<input class="label5" type="file" name="xml file" accept=".xml">
 				<input class="label4" type="submit" value="Upload">
 			</form>
-			<div class="label3">Search for a test case:</div>
-			<form action='/' method="post" enctype="multipart/form-data">
-				<select class="label2" name=select-test method="GET" action="/">
+			<div class="label3">Select a test case:</div>
+			<form action='/select-test' method="post">
+				<select name="test-case-name">
 				{% for test in tests %}
 				<option value= "{{test}}" SELECTED>{{test}}</option>
 				{% endfor %}
 				</select>
+				<input type="submit" value="Submit">
 			<form>
 		</div>
 		<div class="main_content">
