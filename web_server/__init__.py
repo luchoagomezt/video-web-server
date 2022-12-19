@@ -1,4 +1,5 @@
 from flask import Flask
+from web_server.entity.xml_parser import XMLParser
 import os
 
 app = Flask(__name__)
