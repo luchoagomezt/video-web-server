@@ -10,24 +10,36 @@
 
 <body>
 	<div class="banner">
-		<img class="logo" src="{{url_for('static', filename='images/telushealth.png')}}" , alt="telushealth"> </img>
-		<img class="title" src="{{url_for('static', filename='images/title.png')}}" , alt="video web server"> </img>
+		<img class="medesync" src="{{url_for('static', filename='images/medesync.png')}}" , alt="medesync">
+		<img class="title" src="{{url_for('static', filename='images/title.png')}}" , alt="video web server">
+		<img class="logo" src="{{url_for('static', filename='images/telushealth.png')}}" , alt="telushealth">
 	</div>
 	<div class="container">
 		<div class="file">
+			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+			<script src="{{url_for('static', filename='main.js')}}"></script>
 			<form class ="uploading" action='/upload-file' method="post" enctype="multipart/form-data">
-				<input class="label5" type="file" name="xml file" accept=".xml">
-				<input class="label4" type="submit" value="Upload">
+				<label class="choose" for="file-choose">
+					<p class="choose-text">First choose an xml file</p>
+				</label>
+				<input class="hide" id="file-choose" type="file" name="xml file" accept=".xml">
+				<label class="upload" for="file-upload">
+					<p class="submit-text">Upload</p>
+				</label>
+				<input class="hide" id="file-upload" type="submit">
 			</form>
-			<div class="label3">Select a test case:</div>
-			<form action='/select-test' method="post">
-				<select name="test-case-name">
+			<form class="menu" action='/select-test' method="post">
+				<select  class="dropdown" name="test-case-name">
+				<option selected="selected">Then select a test case</option>
 				{% for test in tests %}
-				<option value= "{{test}}" SELECTED>{{test}}</option>
+				<option value= "{{test}}">{{test}}</option>
 				{% endfor %}
 				</select>
-				<input type="submit" value="Submit">
-			<form>
+				<label class="select" for="test-submit">
+					<p class="submit-text">Select</p>
+				</label>
+				<input class="hide" id="test-submit" type="submit">
+			</form>
 		</div>
 		<div class="main_content">
 			<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
@@ -39,9 +51,6 @@
 					default />
 			</video>
 		</div>
-	</div>
-	<div class="footer">
-		<img class="footer" src="{{url_for('static', filename='images/medesync.png')}}" , alt="medesync"> </img>
 	</div>
 </body>
 
