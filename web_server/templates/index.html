@@ -19,10 +19,10 @@
 			<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
 			<script src="{{url_for('static', filename='main.js')}}"></script>
 			<form class ="uploading" action='/upload-file' method="post" enctype="multipart/form-data">
-				<label class="choose" for="file-choose">
-					<p class="choose-text">First choose an xml file</p>
-				</label>
-				<input class="hide" id="file-choose" type="file" name="xml file" accept=".xml">
+				<div class="choose">
+					<label class="choose-text" for="file-choose">First choose an xml file to upload</label>
+					<input class="hide" id="file-choose" type="file" name="xml file" accept=".xml">
+				</div>
 				<label class="upload" for="file-upload">
 					<p class="submit-text">Upload</p>
 				</label>
