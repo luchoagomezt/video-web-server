@@ -9,11 +9,11 @@
 
 5.Run command: cd video-web-server
 
-6.Run command: python -m venv ./venv/bin/activate
+6.Run command: python -m venv ./venv
 
 Troubleshooting: If "python" is not recognized, check PY_HOME and PATH variable. Python3.7 will work
 
-7.Run command: pip install flask
+7.Run command: pip install -r requirements.txt
 
 8.Run command: python ./server.py
 
