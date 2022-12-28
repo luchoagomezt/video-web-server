@@ -28,13 +28,16 @@
 				</label>
 				<input class="hide" id="file-upload" type="submit">
 			</form>
+
 			<form class="menu" action='/select-test' method="post">
-				<select  class="dropdown" name="test-case-name">
+				<input list="tests" placeholder="Search for test case" class="dropdown" name="test-case-name">
+				<datalist id="tests">
 				<option selected="selected">Then select a test case</option>
 				{% for test in tests %}
 				<option value= "{{test}}">{{test}}</option>
 				{% endfor %}
-				</select>
+				</datalist>
+
 				<label class="select" for="test-submit">
 					<p class="submit-text">Select</p>
 				</label>
