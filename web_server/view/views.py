@@ -1,36 +1,55 @@
-from flask import request, redirect, url_for, render_template, flash, session
+from flask import request, render_template
 from web_server import app
-from web_server.entity.xml_parser import XMLParser
-import untangle
 import os
+from web_server.entity.vtt_video import VTTVideo
 
 BASE_DIRECTORY = os.path.dirname(os.path.realpath(__file__))
 VIDEO_FILE_NAME = "videos/<test case name>.webm"
 VTT_FILE_NAME = "videos/<test case name>.vtt"
+VTT_VIDEO = VTTVideo()
+
+
+@app.route('/select-test', methods=['POST'])
+def select_test():
+    if len(request.values) > 0:
+        app.logger.debug(f"test-case-name: {request.values['test-case-name']}")
+
+        test_case_name = request.values['test-case-name']
+        vtt_file = os.path.join(os.path.dirname(BASE_DIRECTORY), "static/" +
+                                VTT_FILE_NAME.replace("<test case name>", test_case_name))
+        VTT_VIDEO.set_test_case_name(test_case_name)
+        VTT_VIDEO.generate_vtt_list()
+        VTT_VIDEO.save_vtt_list_to_file(vtt_file)
+
+        video_file = os.path.join(os.path.dirname(BASE_DIRECTORY), "static/" +
+                                  VIDEO_FILE_NAME.replace("<test case name>", test_case_name))
+
+        VTT_VIDEO.set_video_url()
+        status = VTT_VIDEO.save_video_to_file(video_file)
+
+    return show_video_with_track()
+
+
+@app.route('/upload-file', methods=['POST'])
+def upload_file():
+    fp = request.files['xml file']
+    app.logger.debug(f"request.files['xml file']: {fp.filename}")
+    if fp.filename != "":
+        file_name = os.path.join(app.config['UPLOAD_FOLDER'], fp.filename)
+        fp.save(file_name)
+        VTT_VIDEO.set_parser(file_name)
+
+    return show_video_with_track()
 
 
 @app.route('/')
 def show_video_with_track():
-    xml_file_name = "original.xml"
+    test_case_name = VTT_VIDEO.get_test_name()
 
-    xml_file_path_name = os.path.join(os.path.dirname(BASE_DIRECTORY), f'model/{xml_file_name}')
-    xml_object = untangle.parse(xml_file_path_name)
-    xml_parser = XMLParser(xml_object)
-
-    test_case_name = "MEDQA 339 Add a professional"
-
-    vtt = xml_parser.generate_vtt(test_case_name)
-    vtt_file = os.path.join(os.path.dirname(BASE_DIRECTORY), "static/" +
-                            VTT_FILE_NAME.replace("<test case name>", test_case_name))
-
-    with open(vtt_file, 'w') as fp:
-        for entry in vtt:
-            fp.write(entry)
-        fp.close()
-
-    test_names = xml_parser.get_test_names()
     video_name = VIDEO_FILE_NAME.replace("<test case name>", test_case_name)
     track_name = VTT_FILE_NAME.replace("<test case name>", test_case_name)
+
+    test_names = VTT_VIDEO.get_test_names()
 
     return render_template("index.html",
                            video_name=video_name,

@@ -1,11 +1,15 @@
 body {
     margin: 0;
-    width: 100%;
+    max-width: 100%;
     height: 100%;
-    background-image: url('../images/full.jpg');
+/*  background-image: url('../images/full.jpg');
     background-repeat: no-repeat;
     background-size: 30vw;
-    background-position: 130% 10%;
+    background-position: 130% 30%;*/
+}
+
+.hide {
+    display: none;
 }
 
 .banner {
@@ -14,18 +18,26 @@ body {
 }
 
 .logo {
-    width: 20vw;
-    height: 6vh;
-    margin-left: 1%;
-    margin-top: 1%;
+    align-items: right;
+    justify-content: right;
+    text-align: right;
+    max-height: 45px;
+    margin-top: 0.5%;
+    margin-right: 2%;
+    margin-left: auto;
 }
 
 .title {
-    width: 20vw;
-    height: 6vh;
-    margin-left: 1%;
-    margin-top: 0.7%;
+    max-height: 45px;
+    margin-top: 0.5%;
 }
+
+.medesync {
+    max-height: 45px;
+    margin-top: 0.5%;
+    margin-left: 1%;
+}
+
 
 .container {
     width: 100%;
@@ -36,32 +48,72 @@ body {
     margin: 0;
     display: flex;
     margin-top: 0%;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    color:#4B286D;
+/*  font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;*/
+    font-family: "Gill Sans", sans-serif;
     align-items: center;
     justify-content: center;
     text-align: center;
 }
 
-.label1 {
-    font-size: 20px;
+.uploading {
+    display: flex;
 }
 
-.label2 {
-    font-size: 15px;
+.choose{
+    align-items: left;
+    justify-content: left;
+    text-align: left;
+    width: 250px;
+    height: 3vh;
+    border: 0.1px solid;
+    cursor: pointer;
+    display: inline-block;
+    white-space: nowrap;
+    overflow: hidden;
+}
+
+.choose-text{
+    font-size: 13px;
+    margin-top: 1%;
     margin-left: 2%;
-    width: 15vw;
+    display:inline-block;
+    width: 100%;
 }
 
-.label3 {
-    font-size: 20px;
+.upload{
+    height: 3vh;
+    width: 80px;
+    background: linear-gradient(to bottom, #66CC00, #2B8000);
+    border: 1px solid #2B8000;
+    border-radius: 10%;
     margin-left: 5%;
 }
 
-.label4{
+.submit-text{
+    color: white;
     font-size:15px;
-    margin-left: 0;
+    margin-top: 0.2vh;
 }
+
+.menu{
+    display: flex;
+}
+
+.dropdown{
+
+    margin-left: 100px;
+    width: 250px;
+}
+
+.select{
+    height: 3vh;
+    width: 80px;
+    background: linear-gradient(to bottom, #66CC00, #2B8000);
+    border: 1px solid #2B8000;
+    border-radius: 10%;
+    margin-left: 5%;
+}
+
 .main_content {
     width: auto;
     height: auto;
@@ -74,17 +126,3 @@ body {
     width: 75vw;
     margin-top: 1%;
 }
-
-.footer {
-    align-items: right;
-    justify-content: right;
-    text-align: right;
-    width: 15vw;
-    margin-left: auto;
-    margin-right: 1%;
-    margin-top: 0.3%;
-    height: 3vw;
-}
-
-
-

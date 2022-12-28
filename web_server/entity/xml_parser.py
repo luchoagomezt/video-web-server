@@ -30,7 +30,7 @@ class XMLParser:
         self.obj = object_from_xml
         self.vtt_entry = f'<count>\n<start-time> --> <end-time>\n<keyword>\n\n'
 
-    def get_video_url(self,test_name):
+    def get_video_url(self, test_name):
         for suite1 in self.obj.robot.suite.suite:
             try:
                 for suite2 in suite1.suite:

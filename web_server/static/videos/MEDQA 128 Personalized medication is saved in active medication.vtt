@@ -1,0 +1,39 @@
+WEBVTT
+
+
+0
+00:00:00.000 --> 00:00:10.438
+Run Setup Keyword  Login with Organizational Administrator
+
+1
+00:00:10.438 --> 00:00:22.446
+Run Setup Keyword  Add Personalized Medication
+
+2
+00:00:22.446 --> 00:00:39.919
+Run Setup Keyword  Add Personalized Prescription
+
+3
+00:00:39.919 --> 00:00:49.058
+Search Patient
+
+4
+00:00:49.058 --> 00:00:49.230
+Open Summary Tab
+
+5
+00:00:49.230 --> 00:00:49.611
+Verify Item Exist In Summary
+
+6
+00:00:49.611 --> 00:01:05.496
+Run Cleanup Keyword  Delete All Prescriptions in Male Patient
+
+7
+00:01:05.496 --> 00:01:10.794
+Run Cleanup Keyword  Delete Personalized Medication
+
+8
+00:01:10.794 --> 00:01:14.885
+Run Cleanup Keyword  Cleanup
+
